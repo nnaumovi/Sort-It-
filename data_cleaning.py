@@ -1,23 +1,13 @@
 import pandas as pd
 
-df = pd.read_csv('app_info.csv')
-
+df = pd.read_csv('apps.csv', encoding='windows-1252')
+ids = df['id']
 names = df['name']
-categories = df['category']
-df['compatibility']=df['compatibility'][:].str.split(' ')
-compatibility = df['compatibility']
-
-for elem in compatibility:
-    if 'and' in elem:
-        elem.remove('and')
-    if 'touch.' in elem:
-        elem.remove('touch.')
+keywords = df['keywords'].str.split(', ')
 
 apps = []
 for i in range(0, names.size):
-    keywords = []
-    keywords.append(names[i])
-    keywords.append(categories[i])
-    keywords.extend(compatibility[i][7:])
-    apps.append({'title': [names[i]], 'keywords': keywords, 'cat': [categories[i]]})
-print(apps)
+    keys = []
+    keys.extend(keywords[i][1:])
+    if len(keys) > 1:
+        apps.append({'title': [names[i]], 'keywords': keys[:-2], 'cat': keys[1]})
