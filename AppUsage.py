@@ -4,7 +4,7 @@ import datetime as dt
 
 def redundant(filepath):
     redundant = []
-    past_day = dt.date(dt.date.today().year + (dt.date.today().month - 2) // 12, abs(dt.date.today().month - 2), dt.date.today().day)
+    past_day = dt.date(dt.date.today().year + (dt.date.today().month - 6) // 12, abs(dt.date.today().month - 6), dt.date.today().day)
     
     directory = filepath
     for filename in os.scandir(directory):
