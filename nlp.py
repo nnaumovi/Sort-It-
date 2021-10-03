@@ -1,3 +1,5 @@
+
+
 #coding:windows-1252
 '''
 app to be added:
@@ -30,7 +32,6 @@ for each folder in folders:
         add the count of the category to dict_match
     //some thoughts to consider: maybe look into the percent of the folder that has the desired app category?
     total_res_dict.update(folder:[dict_match_score, word_sim_score])
-
 then search total_res_dict for greatest (average? -how we weight these two vars is still up in the air) of dict_match_score and word_sim_score
 and assign the app to be added to the corresponding folder
 '''
@@ -101,6 +102,8 @@ def find_folder(dict_of_folders, app_to_be_added):
 
 print(find_folder(dict_of_folders, app_to_be_added))
 
+'''
+('screwing around', [['putting effort', ['Evernote - stay organized', 'iTranslate - Language Translator & Dictionary', 'Mint: Personal Finance, Budget, Bills & Money', 'Indeed Job Search']], ['weather and stuff', ['WeatherBug - Local Weather, Radar, Maps, Alerts', 'iStellar', 'The Weather Channel: Forecast, Radar & Alerts']], ['eh stuff', ['TripAdvisor Hotels Flights Restaurants', 'Lifesum – Inspiring healthy lifestyle app', 'Amazon App: shop, scan, compare, and read reviews', 'HomeBudget with Sync']], ['screwing around', ['Shanghai Mahjong', 'Ms. PAC-MAN', ':) Sudoku +', 'Fish Tycoon', 'iFart - The Original Fart Sounds App', 'Among Us!']]])
 
 
-
+'''
